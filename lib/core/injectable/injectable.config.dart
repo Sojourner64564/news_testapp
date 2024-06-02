@@ -20,11 +20,13 @@ import '../../feature/news_feature/data/repository_impl/news_repository_impl.dar
 import '../../feature/news_feature/domain/repository/news_repository.dart'
     as _i7;
 import '../../feature/news_feature/domain/usecase/news_usecase.dart' as _i9;
+import '../../feature/news_feature/presentation/cubit/fetch_details_news_cubit/fetch_details_news_cubit.dart'
+    as _i12;
 import '../../feature/news_feature/presentation/cubit/fetch_featured_news_cubit/fetch_featured_news_cubit.dart'
     as _i10;
 import '../../feature/news_feature/presentation/cubit/fetch_latest_news_cubit/fetch_latest_news_cubit.dart'
     as _i11;
-import '../network/internet_connection_checker.dart' as _i12;
+import '../network/internet_connection_checker.dart' as _i13;
 import '../network/network_info.dart' as _i5;
 import '../network/network_info_impl.dart' as _i6;
 
@@ -55,8 +57,10 @@ _i1.GetIt $initGetIt(
       () => _i10.FetchFeaturedNewsCubit(gh<_i9.NewsUsecase>()));
   gh.lazySingleton<_i11.FetchLatestNewsCubit>(
       () => _i11.FetchLatestNewsCubit(gh<_i9.NewsUsecase>()));
+  gh.lazySingleton<_i12.FetchDetailsNewsCubit>(
+      () => _i12.FetchDetailsNewsCubit(gh<_i9.NewsUsecase>()));
   return getIt;
 }
 
 class _$RegisterModuleConnectionChecker
-    extends _i12.RegisterModuleConnectionChecker {}
+    extends _i13.RegisterModuleConnectionChecker {}
