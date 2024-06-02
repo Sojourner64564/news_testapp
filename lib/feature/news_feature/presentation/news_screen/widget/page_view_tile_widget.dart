@@ -20,7 +20,8 @@ class PageViewTileWidget extends StatelessWidget {
             BoxShadow(
               color: MyColors.transparentBlackColor,
               blurRadius: 10,
-              offset: Offset(0, 3), // Shadow position
+              spreadRadius: 2,
+              offset: Offset(0, 0), // Shadow position
             ),
           ],
         ),

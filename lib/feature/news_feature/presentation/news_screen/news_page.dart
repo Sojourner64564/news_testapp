@@ -148,10 +148,22 @@ class _NewsPageState extends State<NewsPage> {
                     itemCount: state.listArticle.length,
                     shrinkWrap: true,
                     itemBuilder: (BuildContext context, int index) {
-                      return Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
-                        child: ListViewTileWidget(
-                          articleEntity: state.listArticle[index],
+                      return GestureDetector(
+                        onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => NewsDetailsScreen(
+                                id: state.listArticle[index].id,
+                              ),
+                            ),
+                          );
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+                          child: ListViewTileWidget(
+                            articleEntity: state.listArticle[index],
+                          ),
                         ),
                       );
                     },
