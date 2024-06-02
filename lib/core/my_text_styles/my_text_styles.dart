@@ -14,7 +14,12 @@ class MyTextStyles{
   );
   static const title3 = TextStyle(
     color: MyColors.blackColor,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w500,
+    fontSize: 28,
+  );
+  static const whiteTitle3 = TextStyle(
+    color: MyColors.whiteColor,
+    fontWeight: FontWeight.w500,
     fontSize: 28,
   );
   static const greyText1 = TextStyle(
@@ -31,5 +36,7 @@ class MyTextStyles{
     color: MyColors.blackColor,
     fontWeight: FontWeight.w400,
     fontSize: 15,
+      height: 1.2 // the height between text, default is null
+
   );
 }

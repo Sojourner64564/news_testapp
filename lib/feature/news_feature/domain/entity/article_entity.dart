@@ -6,6 +6,7 @@ class ArticleEntity{
     this.imageUrl = '',
     this.readed = false,
     this.description = '',
+    this.daysAgo = ''
   });
 
   final String id;

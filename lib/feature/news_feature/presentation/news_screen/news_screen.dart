@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_testapp/core/my_colors/my_colors.dart';
 import 'package:news_testapp/core/my_text_styles/my_text_styles.dart';
+import 'package:news_testapp/feature/news_feature/presentation/news_details_screen/news_details_screen.dart';
 import 'package:news_testapp/feature/news_feature/presentation/news_screen/news_page.dart';
 
 class NewsScreen extends StatelessWidget{
@@ -11,12 +12,15 @@ class NewsScreen extends StatelessWidget{
     return Scaffold(
       backgroundColor: MyColors.backgroundColor,
       appBar: AppBar(
+        backgroundColor: MyColors.backgroundColor,
         toolbarHeight: 120,
         leading: IconButton(
           icon: const Icon(
               Icons.arrow_back_ios,
           ),
-          onPressed: () {  },
+          onPressed: () {
+
+          },
         ),
         title: const Text(
           'Notification',
@@ -31,7 +35,7 @@ class NewsScreen extends StatelessWidget{
           SizedBox(width: 10),
         ],
       ),
-      body: NewsPage(),
+      body: const NewsPage(),
     );
   }
 

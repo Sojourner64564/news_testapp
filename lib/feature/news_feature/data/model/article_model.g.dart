@@ -12,7 +12,7 @@ ArticleModel _$ArticleModelFromJson(Map<String, dynamic> json) => ArticleModel(
       publicationDate: json['publication_date'] as String? ?? '',
       imageUrl: json['image_url'] as String? ?? '',
       readed: json['readed'] as bool? ?? false,
-      description: json['description'] as String?,
+      description: json['description'] as String? ?? '',
     );
 
 Map<String, dynamic> _$ArticleModelToJson(ArticleModel instance) =>

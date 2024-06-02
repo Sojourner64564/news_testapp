@@ -10,7 +10,7 @@ class ListViewTileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
+      height: 110,
       decoration: BoxDecoration(
         color: MyColors.whiteColor,
         borderRadius: BorderRadius.circular(10),
@@ -24,23 +24,27 @@ class ListViewTileWidget extends StatelessWidget {
               height: 60,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.network(articleEntity.imageUrl),
+                child: Image.network(
+                  articleEntity.imageUrl,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             const SizedBox(width: 20),
             SizedBox(
               width: 220,
-              child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     articleEntity.title,
                     style: MyTextStyles.text1,
                     overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
+                    maxLines: 2,
                   ),
                   Text(
-                    articleEntity.publicationDate,
+                    '${articleEntity.daysAgo} day/s',
                     style: MyTextStyles.greyText2,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
