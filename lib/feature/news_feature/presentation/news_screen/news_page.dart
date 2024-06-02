@@ -40,7 +40,7 @@ class _NewsPageState extends State<NewsPage> {
               style: MyTextStyles.title2,
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           SizedBox(
             height: 300,
             child: BlocBuilder<FetchFeaturedNewsCubit, FetchFeaturedNewsState>(
@@ -107,7 +107,7 @@ class _NewsPageState extends State<NewsPage> {
               },
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Text(

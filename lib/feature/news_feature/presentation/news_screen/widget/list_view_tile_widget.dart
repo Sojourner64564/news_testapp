@@ -14,6 +14,13 @@ class ListViewTileWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: MyColors.whiteColor,
         borderRadius: BorderRadius.circular(10),
+        boxShadow: const [
+          BoxShadow(
+            color: MyColors.transparentBlackShadowColor,
+            blurRadius: 20,
+            offset: Offset(0, 2),
+          ),
+        ],
       ),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(20, 23, 20, 23),

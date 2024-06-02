@@ -10,47 +10,50 @@ class PageViewTileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: MyColors.whiteColor,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: const [
-          BoxShadow(
-            color: MyColors.transparentBlackColor,
-            blurRadius: 10,
-            offset: Offset(0, 5), // Shadow position
-          ),
-        ],
-      ),
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Image.network(
-              articleEntity.imageUrl,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Container(
+        decoration: BoxDecoration(
+          color: MyColors.whiteColor,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: const [
+            BoxShadow(
               color: MyColors.transparentBlackColor,
-              borderRadius: BorderRadius.circular(20),
+              blurRadius: 10,
+              offset: Offset(0, 3), // Shadow position
             ),
-          ),
-          Positioned(
-            bottom: 40,
-            left: 20,
-            child: SizedBox(
-                width: MediaQuery.of(context).size.width - 40,
-                child: Text(
-                  articleEntity.title,
-                  style: MyTextStyles.whiteTitle3,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 3,
-                )),
-          ),
-        ],
+          ],
+        ),
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.network(
+                articleEntity.imageUrl,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: MyColors.transparentBlackColor,
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+            Positioned(
+              bottom: 40,
+              left: 20,
+              child: SizedBox(
+                  width: MediaQuery.of(context).size.width - 40,
+                  child: Text(
+                    articleEntity.title,
+                    style: MyTextStyles.whiteTitle3,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 3,
+                  )),
+            ),
+          ],
+        ),
       ),
     );
   }
