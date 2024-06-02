@@ -14,6 +14,13 @@ class PageViewTileWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: MyColors.whiteColor,
         borderRadius: BorderRadius.circular(20),
+        boxShadow: const [
+          BoxShadow(
+            color: MyColors.transparentBlackColor,
+            blurRadius: 10,
+            offset: Offset(0, 5), // Shadow position
+          ),
+        ],
       ),
       child: Stack(
         fit: StackFit.expand,
