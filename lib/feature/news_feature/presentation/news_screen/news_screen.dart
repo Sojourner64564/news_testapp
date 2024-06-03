@@ -5,7 +5,7 @@ import 'package:news_testapp/core/my_text_styles/my_text_styles.dart';
 import 'package:news_testapp/feature/news_feature/presentation/controller/change_mark_in_latest_controller.dart';
 import 'package:news_testapp/feature/news_feature/presentation/news_screen/news_page.dart';
 
-class NewsScreen extends StatelessWidget{
+class NewsScreen extends StatelessWidget {
   NewsScreen({super.key});
   final changeMarkInLatestController = getIt<ChangeMarkInLatestController>();
 
@@ -18,11 +18,9 @@ class NewsScreen extends StatelessWidget{
         toolbarHeight: 120,
         leading: IconButton(
           icon: const Icon(
-              Icons.arrow_back_ios,
+            Icons.arrow_back_ios,
           ),
-          onPressed: () {
-
-          },
+          onPressed: () {},
         ),
         title: const Text(
           'Notification',
@@ -30,19 +28,14 @@ class NewsScreen extends StatelessWidget{
         ),
         centerTitle: true,
         actions: [
-          Material(
-            child: Ink(
-              child: InkWell(
-                splashColor: Colors.red,
-                onTap: (){
-                  changeMarkInLatestController.markAllRead();
-                },
-                child: const Text(
-                  'Mark all read',
-                  style: MyTextStyles.title1,
-                ),
-                ),
-              ),
+          TextButton(
+            onPressed: () {
+              changeMarkInLatestController.markAllRead();
+            },
+            child: const Text(
+              'Mark all read',
+              style: MyTextStyles.title1,
+            ),
           ),
           const SizedBox(width: 10),
         ],
@@ -50,5 +43,4 @@ class NewsScreen extends StatelessWidget{
       body: const NewsPage(),
     );
   }
-
 }
