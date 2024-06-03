@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:news_testapp/core/injectable/injectable.dart';
 import 'package:news_testapp/core/my_colors/my_colors.dart';
 import 'package:news_testapp/core/my_text_styles/my_text_styles.dart';
-import 'package:news_testapp/feature/news_feature/presentation/news_details_screen/news_details_screen.dart';
+import 'package:news_testapp/feature/news_feature/presentation/controller/change_mark_in_latest_controller.dart';
 import 'package:news_testapp/feature/news_feature/presentation/news_screen/news_page.dart';
 
 class NewsScreen extends StatelessWidget{
-  const NewsScreen({super.key});
+  NewsScreen({super.key});
+  final changeMarkInLatestController = getIt<ChangeMarkInLatestController>();
 
   @override
   Widget build(BuildContext context) {
@@ -27,12 +29,22 @@ class NewsScreen extends StatelessWidget{
           style: MyTextStyles.title1,
         ),
         centerTitle: true,
-        actions: const [
-          Text(
-            'Mark all read',
-            style: MyTextStyles.title1,
+        actions: [
+          Material(
+            child: Ink(
+              child: InkWell(
+                splashColor: Colors.red,
+                onTap: (){
+                  changeMarkInLatestController.markAllRead();
+                },
+                child: const Text(
+                  'Mark all read',
+                  style: MyTextStyles.title1,
+                ),
+                ),
+              ),
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
         ],
       ),
       body: const NewsPage(),

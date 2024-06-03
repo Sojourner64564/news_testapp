@@ -10,7 +10,8 @@ class FetchLatestNewsStateError extends FetchLatestNewsState {
   final String errorText;
 }
 class FetchLatestNewsStateLoaded extends FetchLatestNewsState {
-  FetchLatestNewsStateLoaded(this.listArticle);
+  FetchLatestNewsStateLoaded(this.listArticle, this.color);
   final List<ArticleEntity> listArticle;
+  final Color color;
 }
 class FetchLatestNewsStateEmpty extends FetchLatestNewsState {}

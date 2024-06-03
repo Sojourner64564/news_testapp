@@ -4,15 +4,15 @@ import 'package:news_testapp/core/my_text_styles/my_text_styles.dart';
 import 'package:news_testapp/feature/news_feature/domain/entity/article_entity.dart';
 
 class ListViewTileWidget extends StatelessWidget {
-  const ListViewTileWidget({super.key, required this.articleEntity});
+  const ListViewTileWidget({super.key, required this.articleEntity, required this.color});
   final ArticleEntity articleEntity;
-
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 110,
       decoration: BoxDecoration(
-        color: MyColors.whiteColor,
+        color: color,
         borderRadius: BorderRadius.circular(10),
         boxShadow: const [
           BoxShadow(

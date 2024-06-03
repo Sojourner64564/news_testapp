@@ -163,6 +163,7 @@ class _NewsPageState extends State<NewsPage> {
                           padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                           child: ListViewTileWidget(
                             articleEntity: state.listArticle[index],
+                            color: state.color,
                           ),
                         ),
                       );

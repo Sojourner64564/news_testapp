@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:news_testapp/core/error/failure.dart';
+import 'package:news_testapp/core/my_colors/my_colors.dart';
 import 'package:news_testapp/feature/news_feature/domain/entity/article_entity.dart';
 import 'package:news_testapp/feature/news_feature/domain/usecase/news_usecase.dart';
 
@@ -11,6 +12,7 @@ part 'fetch_latest_news_state.dart';
 class FetchLatestNewsCubit extends Cubit<FetchLatestNewsState> {
   FetchLatestNewsCubit(this.newsUsecase) : super(FetchLatestNewsStateInitial());
   final NewsUsecase newsUsecase;
+  Color color = MyColors.whiteColor;
 
   Future<void> fetchLatestNews() async{
     emit(FetchLatestNewsStateLoading());
@@ -30,7 +32,7 @@ class FetchLatestNewsCubit extends Cubit<FetchLatestNewsState> {
       return;
     }
     if(failureOrModel.isNotEmpty){
-      emit(FetchLatestNewsStateLoaded(failureOrModel));
+      emit(FetchLatestNewsStateLoaded(failureOrModel, color));
       return;
     }
 
