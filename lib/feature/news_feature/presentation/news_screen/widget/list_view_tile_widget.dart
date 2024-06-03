@@ -51,7 +51,7 @@ class ListViewTileWidget extends StatelessWidget {
                     maxLines: 2,
                   ),
                   Text(
-                    '${articleEntity.daysAgo} day/s',
+                    '${articleEntity.daysAgo} day/s ago',
                     style: MyTextStyles.greyText2,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
