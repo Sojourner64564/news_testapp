@@ -1,6 +1,6 @@
 # news_testapp
 
-##Задейственные технологии: flutter_bloc, get it, injectable, clean architecture
+##Задейственные технологии: flutter_bloc, get it, injectable, clean architecture, auto_route
 
 ##Функционал: фетчинг latest news, featured news, details news, кнопка('Marked all read') с функцией пометки прочитанного, переход на страницу details news
 
