@@ -1,3 +1,4 @@
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:news_testapp/core/injectable/injectable.dart';
 import 'package:news_testapp/core/my_colors/my_colors.dart';
@@ -5,6 +6,7 @@ import 'package:news_testapp/core/my_text_styles/my_text_styles.dart';
 import 'package:news_testapp/feature/news_feature/presentation/controller/change_mark_in_latest_controller.dart';
 import 'package:news_testapp/feature/news_feature/presentation/news_screen/news_page.dart';
 
+@RoutePage()
 class NewsScreen extends StatelessWidget {
   NewsScreen({super.key});
   final changeMarkInLatestController = getIt<ChangeMarkInLatestController>();

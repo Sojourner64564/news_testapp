@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:news_testapp/core/injectable/injectable.dart';
 import 'package:news_testapp/core/my_text_styles/my_text_styles.dart';
+import 'package:news_testapp/core/route/route.gr.dart';
 import 'package:news_testapp/feature/news_feature/presentation/cubit/fetch_featured_news_cubit/fetch_featured_news_cubit.dart';
 import 'package:news_testapp/feature/news_feature/presentation/cubit/fetch_latest_news_cubit/fetch_latest_news_cubit.dart';
 import 'package:news_testapp/feature/news_feature/presentation/news_details_screen/news_details_screen.dart';
@@ -68,14 +70,15 @@ class _NewsPageState extends State<NewsPage> {
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: GestureDetector(
                             onTap: () {
-                              Navigator.push(
+                              AutoRouter.of(context).push(NewsDetailsRoute(id: state.listArticle[index].id));
+                             /* Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => NewsDetailsScreen(
                                           id: state.listArticle[index].id,
                                         ),
                                 ),
-                              );
+                              );*/
                             },
                             child: PageViewTileWidget(
                               articleEntity: state.listArticle[index],
@@ -150,14 +153,15 @@ class _NewsPageState extends State<NewsPage> {
                     itemBuilder: (BuildContext context, int index) {
                       return GestureDetector(
                         onTap: (){
-                          Navigator.push(
+                          AutoRouter.of(context).push(NewsDetailsRoute(id: state.listArticle[index].id));
+                          /*Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => NewsDetailsScreen(
                                 id: state.listArticle[index].id,
                               ),
                             ),
-                          );
+                          );*/
                         },
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
