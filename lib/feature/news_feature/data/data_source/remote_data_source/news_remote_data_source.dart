@@ -24,9 +24,9 @@ class NewsRemoteDataSource{
       title: 'We are processing your request...',
       publicationDate: DateTime.now().subtract(const Duration(days: 1)).toString(),
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWYwu5JNzApVSpK95jSDHS5wQtehaXZv7L0w&s',
-      description: '''Please excuse the interruption.  
-Due to Google's efforts to maintain a “safe ads ecosystem” for its advertisers, publishers and users from fraud and bad experiences, Google has placed restrictions on our ad serving that limit our ability to provide free VPN services. 
-Regrettably, this is beyond our control.  
+      description: '''Please excuse the interruption.c
+Due to Google's efforts to maintain a “safe ads ecosystem” for its advertisers, publishers and users from fraud and bad experiences, Google has placed restrictions on our ad serving that limit our ability to provide free VPN services.\n  
+Regrettably, this is beyond our control.\n   
 To continue to enjoy ForestVPN without interruptions, please upgrade to our Premium version.''',
     ),
     ArticleModel(

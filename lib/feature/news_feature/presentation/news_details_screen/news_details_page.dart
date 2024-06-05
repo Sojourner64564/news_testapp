@@ -1,5 +1,5 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_testapp/core/injectable/injectable.dart';
 import 'package:news_testapp/core/my_colors/my_colors.dart';
@@ -106,7 +106,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                         color: MyColors.whiteColor,
                       ),
                       onPressed: () {
-                        Navigator.pop(context);
+                        AutoRouter.of(context).popForced();
                       },
                     ),
                   ),
@@ -190,8 +190,8 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Text(
-                      state.articleEntity.description,
-                      style: MyTextStyles.title1,
+                     state.articleEntity.description,
+                        style: MyTextStyles.title1,
                     ),
                   ),
                 );
