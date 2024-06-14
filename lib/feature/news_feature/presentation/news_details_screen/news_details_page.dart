@@ -222,6 +222,7 @@ class _NewsDetailsPageState extends State<NewsDetailsPage> {
               ),
             ),
           ),
+          const SizedBox(height: 10),
         ],
       ),
     );
